@@ -528,9 +528,9 @@ static struct country_code_to_enum_rd *_rtw_regd_find_country(u16 countrycode)
 	return NULL;
 }
 
-int rtw_regd_init(_adapter *padapter)
+void rtw_regd_init(struct wiphy *wiphy)
 {
-	struct wiphy *wiphy = padapter->rtw_wdev->wiphy;
+
 
 #if 0
 	if (rtw_regd == NULL) {
@@ -549,6 +549,6 @@ int rtw_regd_init(_adapter *padapter)
 
 	_rtw_regd_init_wiphy(NULL, wiphy);
 
-	return 0;
+
 }
 #endif /* CONFIG_IOCTL_CFG80211 */
